@@ -36,15 +36,19 @@ function buscarPokemon(termo){
 async function buscarPokemon(termo) {
     const url = "https://pokeapi.co/api/v2/pokemon/" + termo
     const resposta = await fetch(url)
-    const pokemon = await resposta.json()
-
-    pokemonAtual = pokemon.id
-
-    resultado.innerHTML = `
-        <img src="${pokemon.sprites.front_default}"/>
-        <p>#${pokemon.id}</p>
-        <h2>${pokemon.name}</h2>
-        `
+    
+    if(resposta.ok){
+        const pokemon = await resposta.json()
+        pokemonAtual = pokemon.id
+        resultado.innerHTML = `
+            <img src="${pokemon.sprites.front_default}"/>
+            <p>#${pokemon.id}</p>
+            <h2>${pokemon.name}</h2>
+            `
+    }else{
+        resultado.innerHTML = `<h2>Esse Pokemon nao existe</h2>`
+    }
+    
 }
 
 btnBuscar.addEventListener('click', () => {
@@ -83,6 +87,5 @@ btnAleatorio.addEventListener('click', () => {
     const max = 1025
     const min = 1
     pokemonAtual = Math.floor(Math.random() * (max - min + 1 ))+ min
-
     buscarPokemon(pokemonAtual)
 })
