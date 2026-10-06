@@ -1,0 +1,11 @@
+.header-p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.search{
+    border-radius: 0.5rem;
+}
+.content-box{
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px;
+}

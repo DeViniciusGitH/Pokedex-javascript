@@ -7,18 +7,32 @@
     <title>Pokedex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-light">
-    <h1>Pokedex</h1>
-    <input type="text" id="campoBusca" placeholder="Nome ou numero">
-    <button id="btnBuscar">Buscar</button>
-
-    <div id="resultado"></div>
-
-    <button id="btnAnterior">Anterior</button>
-    <button id="btnAleatorio">Aleatorio</button>
-    <button id="btnProximo">Proximo</button>
+    <header class="text-center bg-dark-subtle p-5">
+        <div class="container d-flex flex-column">
+            <h1 class="display-1">Pokédex</h1>
+            <p class="header-p mt-3">Procure pokemons por id ou nome no campo abaixo!</p>
+            <div class="mt-5 mx-auto p-3 bg-dark search">
+                <input class="form-control d-inline-block w-auto" type="text" id="campoBusca" placeholder="Nome ou numero">
+                <button id="btnBuscar" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </header>
+    <main class="my-5">
+        <div class="container d-flex">
+            <div class="text-center bg-secondary-subtle p-5  flex-column mx-auto content-box">
+                <div id="resultado" class="text-light bg-dark p-3 mb-5 mx-auto search"></div>
+                    <div>
+                        <button class="btn btn-danger" id="btnAnterior">Anterior</button>
+                        <button class="btn btn-dark" id="btnAleatorio">Aleatorio</button>
+                        <button class="btn btn-light" id="btnProximo">Proximo</button>
+                    </div>
+            </div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 

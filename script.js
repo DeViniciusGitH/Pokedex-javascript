@@ -41,7 +41,7 @@ async function buscarPokemon(termo) {
         const pokemon = await resposta.json()
         pokemonAtual = pokemon.id
         resultado.innerHTML = `
-            <img src="${pokemon.sprites.front_default}"/>
+            <img src="${pokemon.sprites.front_default}" width="180"/>
             <p>#${pokemon.id}</p>
             <h2>${pokemon.name}</h2>
             `
